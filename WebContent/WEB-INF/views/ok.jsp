@@ -9,8 +9,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Insert title here</title>
-  	<link rel="stylesheet" href="/AgendadorConsultas/webjars/bootstrap/3.3.6/css/bootstrap.css"></link>
-  	<link rel="stylesheet" href="/AgendadorConsultas/webjars/bootstrap/3.3.6/css/bootstrap-theme.css"></link>
+  	<link rel="stylesheet" href="/AgendadorConsultas/webjars/bootstrap/3.2.0/css/bootstrap.css"></link>
+  	<link rel="stylesheet" href="/AgendadorConsultas/webjars/bootstrap/3.2.0/css/bootstrap-theme.css"></link>
 </head>
 <body>
     <h2>Olá mundo com Spring MVC!</h2>

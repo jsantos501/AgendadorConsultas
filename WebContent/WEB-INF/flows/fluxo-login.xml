@@ -24,7 +24,7 @@ http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
 	<view-state id="displayLoginErrorView" view="/WEB-INF/views/display_login_erro.jsp" />
 
 	<subflow-state id="createNewAccountSubFlowState" subflow="createNewAccountFlow">
-		<transition on="newAccountCreated" to="displayLoginView"/>
+		<transition on="newAccountCreated" to="apresentarVisaoLogin"/>
 	</subflow-state>
 
 

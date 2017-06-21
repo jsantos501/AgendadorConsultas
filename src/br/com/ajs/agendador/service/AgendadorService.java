@@ -26,13 +26,14 @@ public class AgendadorService {
 
 	}
 
-	public void createNewAccount(AgendadorModel loginCredentials) throws AgendadorException {
+	public String createNewAccount(AgendadorModel loginCredentials) throws AgendadorException {
 		if (loginCredentials.getLoginName() == null || loginCredentials.getLoginName().trim().equals("")
 				|| loginCredentials.getPassword() == null || loginCredentials.getPassword().trim().equals("")) {
 			throw new AgendadorException();
 		}
 
 		loginCredentialsMap.put(loginCredentials.getLoginName(), loginCredentials.getPassword());
+		return "success";
 	}
 	
 }

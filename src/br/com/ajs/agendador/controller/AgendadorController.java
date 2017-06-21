@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class AgendadorController {
 
 
-	 @RequestMapping(value = "/olaMundoSpring", method = RequestMethod.GET)
+	 @RequestMapping(value = "/montarCalendarioAtual", method = RequestMethod.GET)
 	  public String execute() {
-	      System.out.println("Executando a lógica com Spring MVC");
-	      return "ok";
+	      System.out.println("agenda:montarCalendarioAtual:informações de calendario");
+	      return "montarCalendarioAtual";
 	  }
 
 	

@@ -1,0 +1,22 @@
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:p="http://primefaces.org/ui"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="language" content="fr" />
+    <title><ui:insert name="title">Hello JSF!</ui:insert></title>
+</h:head>
+
+<h:body>
+     <p:panel header="Teste" style="width:50%">
+		<p:button value="Teste">
+		</p:button>
+	</p:panel>
+	#{testeFaces.message}
+    
+</h:body>
+
+</f:view>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
+
+	<var name="agendadorModel"
+		class="br.com.ajs.agendador.model.AgendadorModel" />
+
+	<!-- Display the login page -->
+	<view-state id="apresentarVisaoLogin" view="/WEB-INF/views/display_login.jsp"
+		model="agendadorModel">
+		<transition on="loginCredentialsEntered" to="performLoginAction" />
+		<transition on="createNewAccountRequested" to="createNewAccountSubFlowState"/>
+	</view-state>
+
+	<action-state id="performLoginAction">
+		<evaluate expression="agendadorService.performLogin(agendadorModel)" />
+		<transition to="displayLoginSuccessView" />
+		<transition	on-exception="br.com.ajs.agendador.exception.AgendadorException" to="displayLoginErrorView" />
+	</action-state>
+
+	<view-state id="displayLoginSuccessView" view="/WEB-INF/views/display_login_success.jsp" />
+	<view-state id="displayLoginErrorView" view="/WEB-INF/views/display_login_erro.jsp" />
+
+	<subflow-state id="createNewAccountSubFlowState" subflow="createNewAccountFlow">
+		<transition on="newAccountCreated" to="displayLoginView"/>
+	</subflow-state>
+
+
+
+</flow>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/webflow
+http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd"
+start-state="createNewAccountView">
+ 
+<var name="agendadorModel"
+		class="br.com.ajs.agendador.model.AgendadorModel" />
+ 
+<view-state id="createNewAccountView" view="/WEB-INF/views/create_new_account.jsp" model="agendadorModel">
+<transition on="accountInformationEntered" to="createNewAccountAction"/>
+</view-state>
+ 
+<action-state id="createNewAccountAction">
+<evaluate expression="agendadorService.createNewAccount(agendadorModel)"/>
+ 
+<transition to="newAccountCreated"/>
+ 
+<transition on-exception="br.com.ajs.agendador.exception.AgendadorException"
+to="displayLoginErrorView"/>
+ 
+</action-state>
+ 
+<end-state id="newAccountCreated"/>
+ 
+</flow>
